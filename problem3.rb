@@ -5,11 +5,14 @@
 
 
 def isPrime (input)
-  b_prime = true
-  for i in 2..Math.sqrt(input)
-    if input%i == 0
-      b_prime = false
-      break
+  b_prime = false
+  if input%2 != 0
+    b_prime = true
+    (3..Math.sqrt(input)).step(2) do |n|
+      if input%n == 0
+        b_prime = false
+        break
+      end
     end
   end
 end
