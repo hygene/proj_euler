@@ -6,20 +6,23 @@
 # Find the sum of all the multiples of 3 or 5 below 1000
 
 
-def solve (input) 
+def solve (input)
   output = 0
-  n = 1
-  while (3 * n) < input
-    output += (((3*n) % 5) == 0) ? 0 : (3*n) # exclude multiples of 5, those will be addressed in next loop
-    n+=1
+  mult_five = 5
+  curr_val = 3
+
+  while curr_val < input
+    if curr_val > mult_five
+      output += mult_five
+      mult_five += 5
+    elsif curr_val == mult_five
+      mult_five += 5
+    end
+
+    output += curr_val
+    curr_val += 3
   end
-  
-  n = 1
-  while (5 * n) < input
-    output += (5*n)
-    n+=1
-  end
-  
+
   return output
 end
 
