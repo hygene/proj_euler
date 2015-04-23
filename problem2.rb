@@ -18,7 +18,7 @@ def solve (limit)
     output += (step%2) == 0 ? step : 0
     n_first = n_second
     n_second = step
-    puts "step = " + step.to_s + ", n_first = " + n_first.to_s + ", n_second = " + n_second.to_s + ", output = " + output.to_s
+    # puts "step = " + step.to_s + ", n_first = " + n_first.to_s + ", n_second = " + n_second.to_s + ", output = " + output.to_s
   end
 
   return output
